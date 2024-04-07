@@ -2,8 +2,14 @@ Agro-Help: Optimizing Agriculture through Data Analysis
 Agro-Help is a comprehensive web-based platform designed to empower farmers with data-driven insights to optimize agricultural practices and maximize crop yield. By leveraging soil analysis, weather data, and machine learning algorithms, Agro-Help provides personalized recommendations tailored to each farmer's specific needs and conditions.
 
 Key Features
-1. Soil Analysis Form
+* Soil Analysis Form
 The heart of Agro-Help lies in its soil analysis form, where farmers can input various parameters related to soil conditions and farming practices. These parameters include:
+
+* Marketplace
+In addition to soil analysis, Agro-Help features a marketplace where farmers can access a wide range of agricultural products and services. From seeds and fertilizers to farming equipment and consultancy services, the marketplace offers a one-stop solution for all farming needs. Farmers can browse through various listings, compare prices, and make purchases directly through the platform, saving time and effort.
+
+* Informational Pages
+Agro-Help also includes informational pages with valuable resources and updates for farmers:
 
 Location: The geographical location of the farm.
 Crop Grown: The type of crop cultivated on the farm.
@@ -14,12 +20,6 @@ Pesticides Used: The pesticides used to protect crops from diseases and pests.
 Soil Texture: The texture of the soil (e.g., sandy soil, clay soil, loamy soil).
 Drainage: The quality of soil drainage (e.g., good drainage, moderate drainage, poor drainage).
 Average Crop Yield: The average yield of crops harvested from the farm.
-
-2. Marketplace
-In addition to soil analysis, Agro-Help features a marketplace where farmers can access a wide range of agricultural products and services. From seeds and fertilizers to farming equipment and consultancy services, the marketplace offers a one-stop solution for all farming needs. Farmers can browse through various listings, compare prices, and make purchases directly through the platform, saving time and effort.
-
-3. Informational Pages
-Agro-Help also includes informational pages with valuable resources and updates for farmers:
 
 News: Stay informed about the latest developments in the agricultural industry, including new technologies, farming practices, and government policies.
 Weather Forecast: Access real-time weather data to make informed decisions about crop planting, irrigation, and harvesting.
