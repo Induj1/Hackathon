@@ -1,0 +1,109 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    background-image: url("background.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+    box-shadow: #3A5F0B;
+}
+
+/* Header Styles */
+header {
+    margin: 1%;
+    border-radius: 10px;
+    box-shadow: #0c0c0c;
+    background-color: #3A5F0B;
+    padding: 20px 0;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #f5f5f5;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 13%;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Index Styles */
+.hero {
+    background-image: url('farmers.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-text {
+    text-align: center;
+    color: #0c0c0c;
+}
+
+.hero-text h1 {
+    font-family: 'Italiana', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 100px;
+    margin: 0;
+    line-height: 1.2; /* Ensure proper spacing between lines */
+}
+
+.hero-text p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+.hero-text button {
+    background-color: #3A5F0B;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px; /* Add space between text and button */
+}
+
+.hero-text button:hover {
+    background-color: #4e8742; /* Darker green color on hover */
+}

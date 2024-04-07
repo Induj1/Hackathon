@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Output Roadmap</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.roadmap {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+</style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>Your Personalised Roadmap</h1>
+        <a href="index.html">home</a>
+    </div>
+</header>
+
+<div class="container">
+    <div id="roadmap-output" class="roadmap">
+        <!-- Randomly selected roadmap will be displayed here -->
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <p>&copy; Agro-Help</p>
+    </div>
+</footer>
+
+<script>
+// Array containing the 7 roadmaps
+const roadmaps = [
+    `Kharif Season:
+
+Preparation (June-July): Farmer begins by meticulously preparing the land, ensuring thorough plowing and removal of weeds. Soil testing reveals imbalances in pH and nutrient levels, prompting the farmer to amend the soil with organic fertilizers like compost and vermicompost to promote soil health and fertility.
+Sowing (July-August): With the soil enriched, Farmer selects rice as the primary Kharif crop, sowing seeds in well-prepared beds. Organic compost is applied during sowing to provide essential nutrients and promote vigorous growth. Careful spacing between seedlings ensures optimal growth conditions.
+Crop Care (August-October): Vigilant monitoring of the rice paddies reveals early signs of nutrient deficiencies. To address this, the farmer supplements with organic foliar sprays enriched with micronutrients. Additionally, judicious irrigation practices are implemented to maintain optimal moisture levels.
+Rabi Season:
+
+Post-Harvest (October-November): Following the successful rice harvest, Farmer prioritizes soil regeneration. Crop residues are incorporated into the soil to enhance organic matter content, while a balanced blend of organic fertilizers such as vermicompost and bone meal is applied to replenish soil nutrients.
+Preparation (November-December): The field undergoes thorough preparation for wheat cultivation, with special attention given to soil structure and drainage. Green manure crops are planted and subsequently incorporated into the soil to enhance soil fertility.
+Sowing (December-January): Wheat seeds are sown with precision, ensuring uniform coverage and optimal spacing for robust growth. Farmer utilizes biofertilizers enriched with beneficial microbes to enhance nutrient uptake and promote strong root development.
+Crop Care (January-March): Throughout the Rabi season, integrated pest management techniques are employed to safeguard the wheat crop against pests and diseases. Regular soil testing guides supplementary fertilization, ensuring the crop's nutritional needs are met.`,
+
+    `Kharif Season:
+
+Preparation (June-July): Farmer commences land preparation activities by meticulously plowing and leveling the field, ensuring optimal soil structure for crop growth. Soil testing reveals deficiencies in nitrogen and potassium, prompting the farmer to supplement with organic fertilizers like compost and biofertilizers.
+Sowing (July-August): With soil fertility enhanced, Farmer selects rice as the primary Kharif crop, sowing seeds in well-prepared beds. Organic compost is applied during sowing to provide essential nutrients and promote vigorous growth. Adequate spacing between seedlings ensures optimal access to sunlight and nutrients.
+Crop Care (August-October): Vigilant monitoring of the rice paddies reveals early signs of nutrient deficiencies. To address this, the farmer applies organic foliar sprays enriched with micronutrients. Additionally, judicious irrigation practices are implemented to maintain optimal moisture levels.
+Rabi Season:
+
+Post-Harvest (October-November): Following the successful rice harvest, Farmer prioritizes soil regeneration. Crop residues are incorporated into the soil to enhance organic matter content, while a balanced blend of organic fertilizers such as vermicompost and bone meal is applied to replenish soil nutrients.
+Preparation (November-December): The field undergoes thorough preparation for wheat cultivation, with special attention given to soil structure and drainage. Green manure crops are planted and subsequently incorporated into the soil, enriching it with nitrogen and other essential nutrients.
+Sowing (December-January): Wheat seeds are sown with precision, ensuring uniform coverage and optimal spacing for robust growth. Farmer utilizes biofertilizers enriched with beneficial microbes to enhance nutrient uptake and promote strong root development.
+Crop Care (January-March): Throughout the Rabi season, integrated pest management techniques are employed to safeguard the wheat crop against pests and diseases. Regular soil testing guides supplementary fertilization, ensuring the crop's nutritional needs are met.`,
+
+    `Kharif Season:
+
+Preparation (June-July): Farmer initiates land preparation activities by plowing and leveling the field, ensuring optimal soil structure for crop growth. Soil testing reveals imbalances in pH and nutrient levels, prompting the farmer to amend the soil with organic fertilizers like compost and farmyard manure to promote soil health.
+Sowing (July-August): With the soil enriched, Farmer selects bajra as the primary Kharif crop, sowing seeds in well-prepared beds. Organic compost is applied during sowing to provide essential nutrients and promote vigorous growth. Careful spacing between seedlings ensures optimal growth conditions.
+Crop Care (August-October): Vigilant monitoring of the bajra crop reveals early signs of pest infestation. To mitigate pest pressures, Farmer employs cultural control methods such as intercropping with pest-repellent plants. Additionally, judicious irrigation practices are implemented to maintain optimal moisture levels.
+Rabi Season:
+
+Post-Harvest (October-November): Following the successful bajra harvest, Farmer prioritizes soil regeneration. Crop residues are incorporated into the soil to enhance organic matter content, while a balanced blend of organic fertilizers such as vermicompost and bone meal is applied to replenish soil nutrients.
+Preparation (November-December): The field undergoes thorough preparation for wheat cultivation, with special attention given to soil structure and drainage. Green manure crops are planted and subsequently incorporated into the soil to enhance soil fertility.
+Sowing (December-January): Wheat seeds are sown with precision, ensuring uniform coverage and optimal spacing for robust growth. Farmer utilizes biofertilizers enriched with beneficial microbes to enhance nutrient uptake and promote strong root development.
+Crop Care (January-March): Throughout the Rabi season, integrated pest management techniques are employed to safeguard the wheat crop against pests and diseases. Regular soil testing guides supplementary fertilization, ensuring the crop's nutritional needs are met.`,
+
+    `Kharif Season:
+
+Preparation (June-July): Farmer commences land preparation activities by thoroughly plowing and leveling the field, ensuring proper soil structure. Soil testing reveals imbalances in pH and nutrient levels, prompting the farmer to amend the soil with organic fertilizers such as compost and vermicompost to promote soil health.
+Sowing (July-August): With the soil enriched, Farmer selects ragi as the primary Kharif crop, sowing seeds in well-prepared beds. Organic compost is applied during sowing to provide essential nutrients and promote vigorous growth. Careful spacing between seedlings ensures optimal growth conditions.
+Crop Care (August-October): Vigilant monitoring of the ragi crop reveals early signs of nutrient deficiencies. To address this, the farmer supplements with organic foliar sprays rich in micronutrients. Additionally, judicious irrigation practices are implemented to maintain optimal moisture levels.
+Rabi Season:
+
+Post-Harvest (October-November): Following the successful ragi harvest, Farmer prioritizes soil regeneration. Crop residues are incorporated into the soil to enhance organic matter content, while a balanced blend of organic fertilizers such as compost and farmyard manure is applied to replenish soil nutrients.
+Preparation (November-December): The field undergoes thorough preparation for wheat cultivation, with special attention given to soil structure and drainage. Green manure crops are planted and subsequently incorporated into the soil to enhance soil fertility.
+Sowing (December-January): Wheat seeds are sown with precision, ensuring uniform coverage and optimal spacing for robust growth. Farmer utilizes biofertilizers enriched with beneficial microbes to enhance nutrient uptake and promote strong root development.
+Crop Care (January-March): Throughout the Rabi season, integrated pest management techniques are employed to safeguard the wheat crop against pests and diseases. Regular soil testing guides supplementary fertilization, ensuring the crop's nutritional needs are met.`,
+
+    `Kharif Season:
+
+Preparation (June-July): Farmer commences land preparation activities by meticulously plowing and leveling the field, ensuring optimal soil structure. Soil testing reveals deficiencies in nitrogen and phosphorus, prompting the farmer to supplement with organic fertilizers like compost and biofertilizers.
+Sowing (July-August): With soil fertility enhanced, Farmer selects rice as the primary Kharif crop, sowing seeds in well-prepared beds. Organic compost is applied during sowing to provide essential nutrients and promote vigorous growth. Adequate spacing between seedlings ensures optimal access to sunlight and nutrients.
+Crop Care (August-October): Vigilant monitoring of the rice paddies reveals early signs of pest infestation. To mitigate pest pressures, Farmer employs cultural control methods such as crop rotation and intercropping with pest-repellent plants. Additionally, judicious irrigation practices ensure consistent moisture levels for optimal growth.
+Rabi Season:
+
+Post-Harvest (October-November): Following the successful rice harvest, Farmer prioritizes soil regeneration. Crop residues are incorporated into the soil to enhance organic matter content, while a tailored blend of organic fertilizers such as vermicompost and bone meal is applied to replenish soil nutrients.
+Preparation (November-December): The field undergoes thorough preparation for wheat cultivation, with special attention given to soil structure and drainage. Green manure crops are planted and subsequently incorporated into the soil, enriching it with nitrogen and other essential nutrients.
+Sowing (December-January): Wheat seeds are sown with precision, ensuring uniform coverage and optimal spacing for robust growth. Farmer utilizes biofertilizers enriched with beneficial microbes to enhance nutrient uptake and promote strong root development.
+Crop Care (January-March): Throughout the Rabi season, integrated pest management techniques are employed to safeguard the wheat crop against pests and diseases. Regular soil testing guides supplementary fertilization, ensuring the crop's nutritional needs are met.`,
+
+    `Kharif Season:
+
+Preparation (June-July): Farmer initiates land preparation activities by meticulously plowing and leveling the field, ensuring optimal soil structure. Soil testing reveals deficiencies in nitrogen and potassium, prompting the farmer to supplement with organic fertilizers like compost and biofertilizers.
+Sowing (July-August): With soil fertility enhanced, Farmer selects rice as the primary Kharif crop, sowing seeds in well-prepared beds. Organic compost is applied during sowing to provide essential nutrients and promote vigorous growth. Adequate spacing between seedlings ensures optimal access to sunlight and nutrients.
+Crop Care (August-October): Vigilant monitoring of the rice paddies reveals early signs of pest infestation. To mitigate pest pressures, Farmer employs cultural control methods such as intercropping with pest-repellent plants. Additionally, judicious irrigation practices ensure consistent moisture levels for optimal growth.
+Rabi Season:
+
+Post-Harvest (October-November): Following the successful rice harvest, Farmer prioritizes soil regeneration. Crop residues are incorporated into the soil to enhance organic matter content, while a tailored blend of organic fertilizers such as vermicompost and bone meal is applied to replenish soil nutrients.
+Preparation (November-December): The field undergoes thorough preparation for wheat cultivation, with special attention given to soil structure and drainage. Green manure crops are planted and subsequently incorporated into the soil, enriching it with nitrogen and other essential nutrients.
+Sowing (December-January): Wheat seeds are sown with precision, ensuring uniform coverage and optimal spacing for robust growth. Farmer utilizes biofertilizers enriched with beneficial microbes to enhance nutrient uptake and promote strong root development.
+Crop Care (January-March): Throughout the Rabi season, integrated pest management techniques are employed to safeguard the wheat crop against pests and diseases. Regular soil testing guides supplementary fertilization, ensuring the crop's nutritional needs are met.`,
+
+    `Kharif Season:
+
+Preparation (June-July): Farmer commences land preparation activities by meticulously plowing and leveling the field, ensuring optimal soil structure. Soil testing reveals imbalances in pH and nutrient levels, prompting the farmer to amend the soil with organic fertilizers like compost and biofertilizers to promote soil health.
+Sowing (July-August): With soil fertility enhanced, Farmer selects bajra as the primary Kharif crop, sowing seeds in well-prepared beds. Organic compost is applied during sowing to provide essential nutrients and promote vigorous growth. Careful spacing between seedlings ensures optimal growth conditions.
+Crop Care (August-October): Vigilant monitoring of the bajra crop reveals early signs of pest infestation. To mitigate pest pressures, Farmer employs cultural control methods such as intercropping with pest-repellent plants. Additionally, judicious irrigation practices are implemented to maintain optimal moisture levels.
+Rabi Season:
+
+Post-Harvest (October-November): Following the successful bajra harvest, Farmer prioritizes soil regeneration. Crop residues are incorporated into the soil to enhance organic matter content, while a balanced blend of organic fertilizers such as vermicompost and bone meal is applied to replenish soil nutrients.
+Preparation (November-December): The field undergoes thorough preparation for wheat cultivation, with special attention given to soil structure and drainage. Green manure crops are planted and subsequently incorporated into the soil to enhance soil fertility.
+Sowing (December-January): Wheat seeds are sown with precision, ensuring uniform coverage and optimal spacing for robust growth. Farmer utilizes biofertilizers enriched with beneficial microbes to enhance nutrient uptake and promote strong root development.
+Crop Care (January-March): Throughout the Rabi season, integrated pest management techniques are employed to safeguard the wheat crop against pests and diseases. Regular soil testing guides supplementary fertilization, ensuring the crop's nutritional needs are met.`,
+];
+
+// Function to select a random roadmap from the array
+function selectRandomRoadmap() {
+    const randomIndex = Math.floor(Math.random() * roadmaps.length);
+    return roadmaps[randomIndex];
+}
+
+// Display the randomly selected roadmap on the output page
+document.getElementById('roadmap-output').innerText = selectRandomRoadmap();
+</script>
+
+</body>
+</html>

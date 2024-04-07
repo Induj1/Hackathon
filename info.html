@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farmers Information</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+/* CSS styles */
+</style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="container">
+            <h1></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="form.html">Soil Analysis</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="marketplace.html">marketplace</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>>
+</div>
+</header>
+
+<div class="container">
+    <section id="mandi-info">
+        <h2>Live Mandi Prices</h2>
+        <div id="mandi-data">
+            <!-- Mandi prices data will be displayed here -->
+        </div>
+    </section>
+
+    <section id="weather-info">
+        <h2>Current Weather Conditions</h2>
+        <div id="weather-data">
+            <!-- Weather data will be displayed here -->
+        </div>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>&copy; Agro-Help</p>
+    </div>
+</footer>
+
+<script>
+// Function to generate fake mandi data
+function generateFakeMandiData() {
+    const mandiData = [];
+    for (let i = 0; i < 10; i++) {
+        mandiData.push({
+            crop: getRandomCrop(),
+            price: getRandomPrice()
+        });
+    }
+    return mandiData;
+}
+
+// Function to get a random crop
+function getRandomCrop() {
+    const crops = ['Rice', 'Wheat', 'Maize', 'Barley', 'Soybean'];
+    return crops[Math.floor(Math.random() * crops.length)];
+}
+
+// Function to get a random price
+function getRandomPrice() {
+    return (Math.random() * (100 - 20) + 20).toFixed(2);
+}
+
+// Function to display mandi data
+function displayMandiData(data) {
+    const mandiDataElement = document.getElementById('mandi-data');
+    mandiDataElement.innerHTML = '';
+    data.forEach(item => {
+        const p = document.createElement('p');
+        p.textContent = `${item.crop}: Rs${item.price}`;
+        mandiDataElement.appendChild(p);
+    });
+}
+
+// Call the function to generate fake mandi data and display it
+const fakeMandiData = generateFakeMandiData();
+displayMandiData(fakeMandiData);
+
+// Function to fetch and display weather data
+async function searchWeather() {
+    const searchQuery = 'Bengaluru';
+    const apiKey = '13723652ff7a4de6afc54240242401';
+    const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${searchQuery}&aqi=no`;
+
+    try {
+        const response = await fetch(apiUrl, { mode: 'cors' });
+        const data = await response.json();
+
+        console.log(data);
+
+        // Access data properties as needed
+        const cityName = data.location.name;
+        console.log(cityName);
+
+        const temperature = data.current.temp_c + "°C";
+        console.log(temperature);
+
+        // Do something with the data (e.g., update UI)
+        const weatherData = document.getElementById('weather-data');
+        weatherData.innerHTML = "Temperature: " + temperature + "<br>City: " + cityName;
+    } catch (error) {
+        console.error('Error fetching weather data:', error);
+    }
+}
+
+// Call the searchWeather function to fetch and display weather data
+searchWeather();
+</script>
+
+</body>
+</html>

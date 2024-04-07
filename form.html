@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agro-Help: Soil Analysis Form</title>
+<link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>Soil Analysis Form</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="form.html">Soil Analysis</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="info.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <form id="soil-analysis-form">
+        <label for="location">Location:</label>
+        <input type="text" id="location" placeholder="Enter your location" required>
+        
+        <label for="crop-type">Crop Grown:</label>
+        <input type="text" id="crop-type" placeholder="Enter the crop grown" required>
+        
+        <label for="irrigation-type">Type of Irrigation:</label>
+        <select id="irrigation-type" required>
+            <option value="drip-irrigation">Drip Irrigation</option>
+            <option value="sprinkler-irrigation">Sprinkler Irrigation</option>
+            <option value="flood-irrigation">Flood Irrigation</option>
+        </select>
+        <div id="irrigation-recommendation" class="recommendations"></div>
+        
+        <label for="fertilizer-used">Fertilizers Used:</label>
+        <input type="text" id="fertilizer-used" placeholder="Enter the fertilizers used" required>
+        
+        <label for="insecticides-used">Insecticides Used:</label>
+        <input type="text" id="insecticides-used" placeholder="Enter the insecticides used" required>
+        
+        <label for="pesticides-used">Pesticides Used:</label>
+        <input type="text" id="pesticides-used" placeholder="Enter the pesticides used" required>
+        
+        <label for="soil-texture">Soil Texture:</label>
+        <select id="soil-texture" required>
+            <option value="sandy-soil">Sandy Soil</option>
+            <option value="clay-soil">Clay Soil</option>
+            <option value="loamy-soil">Loamy Soil</option>
+        </select>
+        <div id="soil-texture-recommendation" class="recommendations"></div>
+        
+        <label for="drainage">Drainage:</label>
+        <select id="drainage" required>
+            <option value="good-drainage">Good Drainage</option>
+            <option value="moderate-drainage">Moderate Drainage</option>
+            <option value="poor-drainage">Poor Drainage</option>
+        </select>
+        <div id="drainage-recommendation" class="recommendations"></div>
+        
+        <label for="crop-yield">Average Crop Yield:</label>
+        <input type="text" id="crop-yield" placeholder="Enter the average crop yield" required>
+        <div id="crop-yield-recommendation" class="recommendations"></div>
+        
+        <div id="crop-prediction-result" class="recommendations"></div>
+        
+        <button type="button" onclick="validateForm()">Submit</button>
+        <div id="error-message" style="color: red;"></div>
+    </form>
+</div>
+
+<footer>
+    <div class="container">
+        <p>&copy; Agro-Help</p>
+    </div>
+</footer>
+
+<script src="machine_learning.js"></script>
+<script src="script.js"></script>
+<script>
+function validateForm() {
+    const location = document.getElementById("location").value;
+    const cropType = document.getElementById("crop-type").value;
+    const irrigationType = document.getElementById("irrigation-type").value;
+    const fertilizerUsed = document.getElementById("fertilizer-used").value;
+    const insecticidesUsed = document.getElementById("insecticides-used").value;
+    const pesticidesUsed = document.getElementById("pesticides-used").value;
+    const soilTexture = document.getElementById("soil-texture").value;
+    const drainage = document.getElementById("drainage").value;
+    const cropYield = document.getElementById("crop-yield").value;
+
+    if (!location || !cropType || !irrigationType || !fertilizerUsed || !insecticidesUsed || !pesticidesUsed || !soilTexture || !drainage || !cropYield) {
+        document.getElementById("error-message").innerText = "Please fill in all fields.";
+    } else {
+        window.location.href = "output.html";
+    }
+}
+</script>
+</body>
+</html>
